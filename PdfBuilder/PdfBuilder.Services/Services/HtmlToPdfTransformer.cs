@@ -1,7 +1,8 @@
 ﻿using jsreport.AspNetCore;
 using jsreport.Types;
+using Microsoft.AspNetCore.Http;
 
-namespace PdfBuilder.Services
+namespace PdfBuilder.Services.Services
 {
     public class HtmlToPdfTransformer: IHtmlTransformer
     {
@@ -12,7 +13,7 @@ namespace PdfBuilder.Services
             _jsReportMvcService = jsReportMvcService;
         }
 
-        public async Task<Stream?> Transform(string html)
+        public async Task<Stream?> TransformAsync(string html)
         {
             // Render PDF file
             var report = await _jsReportMvcService.RenderAsync(new RenderRequest()
@@ -33,6 +34,15 @@ namespace PdfBuilder.Services
             });
 
             return report?.Content;
+        }
+
+        public async Task<Stream?> TransformAsync(IFormFile html)
+        {
+            await using var stream = html.OpenReadStream();
+            using var reader = new StreamReader(stream);
+            var htmlString = await reader.ReadToEndAsync();
+
+            return await TransformAsync(htmlString);
         }
     }
 }

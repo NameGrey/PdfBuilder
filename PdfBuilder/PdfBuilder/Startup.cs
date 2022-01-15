@@ -2,6 +2,7 @@
 using jsreport.Binary.Linux;
 using jsreport.Local;
 using jsreport.Types;
+using PdfBuilder.Services;
 
 namespace PdfBuilder
 {
@@ -16,7 +17,7 @@ namespace PdfBuilder
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllers();
 
             services.AddJsReport(new LocalReporting()
                 .UseBinary(JsReportBinary.GetBinary())
@@ -32,6 +33,8 @@ namespace PdfBuilder
                 })
                 .AsUtility()
                 .Create());
+
+            services.BootstrapPdfBuilderServices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)

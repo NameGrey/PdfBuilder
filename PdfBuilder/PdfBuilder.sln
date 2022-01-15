@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfBuilder", "PdfBuilder\Pd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfBuilder.Data", "PdfBuilder.Data\PdfBuilder.Data.csproj", "{A3A4955F-02D1-4AF2-9E87-623EEA43E7A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfBuilder.Services", "PdfBuilder.Services\PdfBuilder.Services.csproj", "{55870B2A-921A-414D-B947-E479CF328721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A3A4955F-02D1-4AF2-9E87-623EEA43E7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3A4955F-02D1-4AF2-9E87-623EEA43E7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3A4955F-02D1-4AF2-9E87-623EEA43E7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55870B2A-921A-414D-B947-E479CF328721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55870B2A-921A-414D-B947-E479CF328721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55870B2A-921A-414D-B947-E479CF328721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55870B2A-921A-414D-B947-E479CF328721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

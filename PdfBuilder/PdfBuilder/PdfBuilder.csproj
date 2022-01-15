@@ -8,14 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="jsreport.AspNetCore" Version="2.1.0" />
-    <PackageReference Include="jsreport.Binary.Linux" Version="2.11.0" />
-    <PackageReference Include="jsreport.Local" Version="2.3.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PdfBuilder.Data\PdfBuilder.Data.csproj" />
+    <ProjectReference Include="..\PdfBuilder.Services\PdfBuilder.Services.csproj" />
   </ItemGroup>
 
 </Project>
