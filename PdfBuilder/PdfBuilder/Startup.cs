@@ -3,12 +3,16 @@ using jsreport.Binary.Linux;
 using jsreport.Local;
 using jsreport.Types;
 using PdfBuilder.Services;
+using PdfBuilder.Swagger;
+using System.Reflection;
 
 namespace PdfBuilder
 {
     public class Startup
     {
         private readonly IConfiguration _configuration;
+        private const string SwaggerVersion = "v2";
+        private const string SwaggerTitle = "PDF Builder";
 
         public Startup(IConfiguration configuration)
         {
@@ -18,6 +22,7 @@ namespace PdfBuilder
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.ConfigureSwagger(SwaggerVersion, SwaggerTitle, Assembly.GetExecutingAssembly().GetName().Name!);
 
             services.AddJsReport(new LocalReporting()
                 .UseBinary(JsReportBinary.GetBinary())
@@ -57,6 +62,8 @@ namespace PdfBuilder
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.ConfigureSwagger(SwaggerVersion, SwaggerTitle);
         }
     }
 }

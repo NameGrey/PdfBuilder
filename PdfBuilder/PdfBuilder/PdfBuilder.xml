@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>PdfBuilder</name>
+	</assembly>
+	<members>
+		<member name="T:PdfBuilder.Controllers.FileController">
+			<summary>
+				Representss a file controller
+			</summary>
+		</member>
+	</members>
+</doc>
