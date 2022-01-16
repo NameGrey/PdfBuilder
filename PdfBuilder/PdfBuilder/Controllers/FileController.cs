@@ -27,7 +27,9 @@ namespace PdfBuilder.Controllers
             }
 
             await using var ms = new MemoryStream();
-            return Ok(new FileContentResult(ms.ToArray(), MediaTypeNames.Application.Octet));
+            pdfStream.CopyTo(ms);
+
+            return File(ms.ToArray(), MediaTypeNames.Application.Octet, $"{request.HtmlFile.FileName}.pdf");
         }
     }
 }
